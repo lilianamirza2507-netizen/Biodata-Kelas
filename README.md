@@ -1,2 +1,2 @@
 # Biodata-Kelas
-Kelas IPA
+Kelas X 4
