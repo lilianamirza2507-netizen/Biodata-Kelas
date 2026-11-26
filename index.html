@@ -163,16 +163,16 @@
     </nav>
 
 
-    <!-- Pemutar YouTube -->
+    <!-- Pemutar musik YouTube -->
     <div id="player"></div>
 
-    <!-- Tombol Musik -->
+    <!-- Tombol musik -->
     <button onclick="toggleMusik()" id="tombolMusik">
         🔇
     </button>
 
-    <!-- YouTube IFrame API -->
-    <script src="https://youtu.be/r9L4AseD-aA?feature=shared" ></script>
+    <!-- YouTube API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
 
     <script>
     let player;
@@ -183,12 +183,14 @@
         player = new YT.Player('player', {
             height: '0',
             width: '0',
-            videoId: 'shared',
+            videoId: 'r9L4AseD-aA',
+
             playerVars: {
                 autoplay: 1,
                 loop: 1,
-                playlist: 'shared'
+                playlist: 'r9L4AseD-aA'
             },
+
             events: {
                 onReady: function(event) {
                     event.target.setVolume(50);
@@ -197,9 +199,13 @@
         });
     }
 
-    // Tombol ON/OFF musik
+    // Fungsi tombol musik ON/OFF
     function toggleMusik() {
         const tombol = document.getElementById("tombolMusik");
+
+        if (!player) {
+            return;
+        }
 
         if (!musikAktif) {
             player.playVideo();
@@ -212,6 +218,7 @@
         }
     }
     </script>
+    
 
     <!-- BERANDA -->
     <section id="beranda">
