@@ -183,11 +183,11 @@
         player = new YT.Player('player', {
             height: '0',
             width: '0',
-            videoId: 'GANTI_ID_VIDEO',
+            videoId: 'shared',
             playerVars: {
-                autoplay: 0,
+                autoplay: 1,
                 loop: 1,
-                playlist: 'GANTI_ID_VIDEO'
+                playlist: 'shared'
             },
             events: {
                 onReady: function(event) {
